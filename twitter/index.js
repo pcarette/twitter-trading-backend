@@ -1,5 +1,6 @@
 const { response } = require("express");
 const needle = require("needle");
+const Order = require("../models/order.model");
 const config = require("dotenv").config();
 const TOKEN = process.env.TWITTER_BEARER_TOKEN;
 
@@ -68,8 +69,9 @@ function streamTweets() {
     try {
       const json = JSON.parse(data);
       const fullText = json.data.text;
-      lines = fullText.split("\n")
-      console.log(lines);
+      const lines = fullText.split("\n")
+      const targetPrice = parseFloat(lines[1].split(":")[1])
+      console.log(targetPrice);
     } catch (error) {}
   });
 }

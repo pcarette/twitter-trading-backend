@@ -1,17 +1,22 @@
 const { Schema, model } = require("mongoose");
 
-const linkedExchangeSchema = new Schema({
-  exchange: {
-    type: String,
-    enum: ["Binance", "FTX", "KuCoin", "ByBit"],
+const order = new Schema(
+  {
+    targetPrice: {
+      type: Number,
+      required: true,
+    },
+    takeProfit: Number,
+    stopLoss: {
+      type: Number,
+      required: true,
+    },
   },
-  apiKey: String,
-  leverage: {
-    type : Number,
-    default : 1,
+  {
+    timestamps: true,
   }
-});
+);
 
-const LinkedExchange = model("LinkedExchange", linkedExchangeSchema);
+const Order = model("Order", order);
 
-module.exports = LinkedExchange;
+module.exports = Order;

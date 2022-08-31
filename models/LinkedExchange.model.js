@@ -12,7 +12,7 @@ const linkedExchangeSchema = new Schema({
   },
 });
 
-linkedExchangeSchema.method.placeOrder = async function placeOrder() {
+linkedExchangeSchema.method.placeOrder = async function placeOrder(limitOrder, takeProft, stopLoss) {
   switch (this.exchange) {
     case "Binance":
       console.log("Binance api call");
