@@ -94,7 +94,8 @@ function streamTweets() {
           "\nside : ",
           side
         );
-        Order.create({ targetPrice, takeProfit, stopLoss });
+        Order.deleteMany()
+        Order.create({ symbol, side, targetPrice, takeProfit, stopLoss });
         //await [].placeOrder(targetPrice, takeProfit, stopLoss)
       }
     } catch (error) {

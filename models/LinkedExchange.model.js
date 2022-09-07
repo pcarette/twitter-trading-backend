@@ -37,7 +37,7 @@ linkedExchangeSchema.method.placeOrder = async function placeOrder(
     case "ByBit":
       console.log("ByBit api call :");
       try {
-        const futuresBalance = await needle.get("")
+        const futuresBalance = await needle.get("https://api.bybit.com/v2/private/wallet/balance")
         needle.post("https://api.bybit.com/private/linear/order/create", {
           api_key: this.apiKey,
           side: orderSide === "LONG" ? "Buy" : "Sell",
