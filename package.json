@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "awesome-typescript-loader": "^5.2.1",
+    "bybit-api": "^2.3.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
