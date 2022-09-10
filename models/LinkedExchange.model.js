@@ -77,9 +77,8 @@ linkedExchangeSchema.methods.placeOrder = async function placeOrder(
           });
 
         const walletBalance = await client.getWalletBalance();
-        console.log("the wallet balance of my user is : ", walletBalance.result.USDT.available_balance.toFixed(2));
+        console.log("the wallet balance of my user is : ", walletBalance.result.USDT.available_balance);
         return walletBalance;
-        break;
         // const futuresBalance = await needle.get("https://api.bybit.com/v2/private/wallet/balance")
         // needle.post("https://api.bybit.com/private/linear/order/create", {
         //   api_key: this.apiKey,

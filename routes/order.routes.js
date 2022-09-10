@@ -12,7 +12,7 @@ router.post("/place-order", async (req, res, next) => {
         console.log("Test passed")
         res.status(200).json("Order Successfully created.")
     } catch (error) {
-        
+        res.status(501).json("Something fucked up")
     }
 })
 
